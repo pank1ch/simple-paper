@@ -1,3 +1,48 @@
 .page-navigation{
   display: none;
+
+  background-color: #ebebeb;
+  padding-top: 10px;
+  padding-bottom: 88px;
+  padding-left: 15px;
+  padding-right: 15px;
+  &--active{
+    display: block;
+  }
+
+
+  @media(min-width:576px){
+    display: block;
+    background-color: #ffffff;
+    padding: 18px 33px;
+  }
+}
+
+.page-navigation__list{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  @media(min-width:576px){
+    display: flex;
+    justify-content: space-between;
+
+  }
+}
+
+.page-navigation__item{
+  margin-bottom: 50px;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  @media(min-width:576px){
+    margin: 0;
+  }
+}
+
+.page-navigation__link{
+  font-size: 18px;
+  text-decoration: none;
+  color: #4C5866;
 }

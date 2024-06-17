@@ -1,5 +1,19 @@
 .hero__wrapper{
   padding: 50px 15px;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 576px){
+    padding: 0 33px;
+    padding-top: 20px;
+
+    flex-direction: row;
+
+  }
+}
+
+.hero_information{
+  display: flex;
+  flex-direction: column;
 }
 
 .hero__title{
@@ -9,6 +23,13 @@
   font-size: 30px;
   line-height: 30px;
   color: #4c5866;
+
+  @media (min-width: 576px){
+    font-size: 38px;
+    line-height: 38px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
 }
 
 .hero__description {
@@ -17,20 +38,20 @@
   color: #85859b;
   font-size: 14px;
   line-height: 150%;
+  @media (min-width: 576px){
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
 }
 
 .hero__button{
-  box-sizing: border-box;
-  display: block;
-  padding: 15px 38px;
-  text-align: center;
-  font-size: 18px;
-  color: #7875fe;
-  border: 1px solid #7875fe;
-  max-width: 144px;
-  text-decoration: none;
+  align-self: flex-start;
 }
 
 .hero__image{
   display: none;
+  @media (min-width: 576px){
+    display: block;
+    margin-left: 29px;
+  }
 }
