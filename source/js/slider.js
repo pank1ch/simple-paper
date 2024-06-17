@@ -1,3 +1,5 @@
+
+
 new Swiper(".brands__slider", {
   slidesPerView: 2,
   spaceBetween: 30,
@@ -11,3 +13,7 @@ new Swiper(".brands__slider", {
   },
 
 });
+
+
+
+
