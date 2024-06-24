@@ -10,11 +10,58 @@
   padding: 60px 15px;
   display: flex;
   flex-direction: column;
+
+  @media(min-width: 576px){
+    padding: 60px 33px;
+  }
+
+  @media(min-width: 768px){
+    padding: 60px 39px;
+    padding-right: 0;
+    padding-bottom: 0;;
+    flex-direction: row;
+  }
+
+  @media(min-width: 1440px){
+    padding: 90px 165px;
+    padding-bottom: 0;
+    justify-content: center;
+  }
+}
+
+.sketchbook__wrapper picture{
+
+  @media (min-width: 768px){
+    order: 2;
+  }
+
 }
 
 .sketchbook__image{
   display: block;
   margin: 0 auto;
+
+  @media(min-width: 576px){
+    width: 449px;
+    height: 341px;
+  }
+
+  @media(min-width: 768px){
+    width: 369px;
+    height: 334px;
+    order: 2;
+    margin-left: 30px;
+  }
+
+  @media(min-width: 1440px){
+    width: 730px;
+    height: 410px;
+  }
+}
+
+.sketchbook__info{
+  display: flex;
+  flex-direction: column;
 }
 
 .sketchbook__title{
@@ -24,6 +71,18 @@
   font-size: 24px;
   line-height: 24px;
   color: #666666;
+
+  @media (min-width: 768px){
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  @media (min-width: 1440px){
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 8px;
+    margin-top: 25px;
+  }
 }
 
 .sketchbook__description{
@@ -32,6 +91,11 @@
   font-size: 16px;
   line-height: 170%;
   color: inherit;
+
+  @media (min-width: 768px){
+    font-size: 18px;
+
+  }
 }
 
 .sketchbook__button{

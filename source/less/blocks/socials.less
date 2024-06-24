@@ -9,6 +9,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media(min-width: 576px){
+    border: none;
+    padding: 0;
+  }
 }
 
 .socials__item{
@@ -20,12 +25,30 @@
 }
 
 .socials__link {
+  color: #ffffff;
   display: flex;
   padding: 3px;
+  transition: all 0.5s ease;
 
+  &:hover{
+    color: #dad9fb;
+  }
+
+  &:focus-visible{
+    background-color: #7875fe;
+    outline: none;
+    transition: none;
+    border-radius: 2px;
+  }
+
+  &:active{
+    color: #7875FE;
+    transition: none;
+  }
 }
 
 .socials__icon{
+  fill: currentColor;
   align-self: center;
   display: block;
   margin: 0 auto;

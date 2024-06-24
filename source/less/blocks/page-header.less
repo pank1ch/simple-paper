@@ -6,6 +6,20 @@
     border:none;
     background-color: #ebebeb;
   }
+  @media(min-width:576px){
+    display: flex;
+    flex-direction: column;
+
+
+  }
+
+  @media(min-width:1440px){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 165px;
+    justify-content: space-between;
+  }
 }
 
 .page-header__wrapper{
@@ -19,14 +33,52 @@
     border-bottom: 1px solid #dddddd;
   }
 
+  @media(min-width:768px){
+    padding-left: 39px;
+    padding-right: 39px;
+
+  }
+
+  @media(min-width:768px){
+    padding-left: 39px;
+    padding-right: 39px;
+
+  }
+
+  @media(min-width:1440px){
+    border: none;
+    padding: 0;
+    display: block;
+
+  }
+
 }
 
-.page-header_controls{
+.page-header__controls{
   display: flex;
   align-items: center;
   padding: 18px 15px;
   @media(min-width:576px){
     padding: 0;
+  }
+
+}
+
+.page-header__controls--main{
+
+  display: flex;
+
+  @media(min-width: 1440px){
+    display: none;
+  }
+}
+
+
+
+.page-header__controls--nav{
+  display: none;
+  @media(min-width: 1440px){
+    display: flex;
   }
 }
 .page-header__logo{
@@ -40,7 +92,12 @@
   @media(min-width: 576px){
     border: none;
   }
+  @media(min-width: 1440px){
+    order: 1;
+    padding: 0;
+  }
 }
+
 
 .page-header__logo-icon {
   display: block;
@@ -96,26 +153,67 @@
 .page-header__search-button{
   display: block;
   margin-left: auto;
+  color: #4C5866;
+  transition: all 0.5s ease;
 
   &--hidden{
     display: none;
   }
 
+  &:hover{
+    color: #7875fe;
+  }
+
+  &:focus-visible{
+    outline: none;
+    border-radius: 2px;
+    background-color: #dad9fb;
+    transition: none;
+  }
+
+  &:active{
+    transition: none;
+    color: #4946b4;
+  }
+
+
 }
 
 .page-header__search-icon {
+  fill: none;
+  stroke: currentColor;
   display: block;
 }
 
 .page-header__login-button{
   display: block;
   margin-left: 30px;
+  color: #4C5866;
+  transition: all 0.5s ease;
 
   &--hidden{
     display: none;
   }
+
+  &:hover{
+    color: #7875fe;
+  }
+
+  &:focus-visible{
+    outline: none;
+    border-radius: 2px;
+    background-color: #dad9fb;
+    transition: none;
+  }
+
+  &:active{
+    transition: none;
+    color: #4946b4;
+  }
 }
 
 .page-header__login-icon {
+  fill: none;
+  stroke: currentColor;
   display: block;
 }

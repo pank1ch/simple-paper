@@ -1,0 +1,92 @@
+.search{
+
+  display: none;
+  position: relative;
+
+  &--active{
+    display: block;
+  }
+}
+
+.search__input{
+  font-family: inherit;
+  font-size: 20px;
+  background-color: transparent;
+  display: block;
+  padding: 0;
+  margin-left: 7px;
+  border: none;
+  width: 205px;
+  height: 20px;
+  padding-bottom: 3px;
+  padding-right: 19px;
+  border-bottom: 1px solid #d1d1e5;
+  outline: none;
+  color: #4c5866;
+
+  &::placeholder{
+    color: #d1d1e5;
+  }
+}
+
+.search__close-button{
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 100%;
+  background-color: #d1d1e5;
+  position: absolute;
+  top: 3px;
+  right: 0;
+  cursor: pointer;
+  transition: all 0.5s ease;
+
+  &::before,
+  &::after{
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 1.5px;
+    background-color: #4c5866;
+    border-radius: 2px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &::before{
+    transform: rotate(-45deg);
+  }
+
+  &::after{
+    transform: rotate(45deg);
+  }
+
+  &:hover{
+    background-color: #7875fe;
+
+    &::before, &::after{
+      background-color: #ffffff;
+    }
+  }
+
+  &:focus-visible{
+    transition: none;
+    border: 1px solid #7875fe;
+    outline: none;
+    background-color: #DAD9FB;
+  }
+
+  &:active{
+    transition: none;
+    background-color: #4946b4;
+
+    &::before, &::after{
+      background-color: #ffffff;
+    }
+
+  }
+}
