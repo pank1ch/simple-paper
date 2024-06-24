@@ -2,11 +2,29 @@
   background-color: #ebebeb;
 }
 
+.brands__wrapper{
+
+  @media(min-width: 576px){
+    padding: 60px 33px;
+  }
+
+  @media(min-width: 768px){
+    padding: 60px 39px;
+  }
+
+  @media(min-width: 1440px){
+    padding: 90px 165px;
+  }
+}
 
 
 .brands__slider{
   padding-top: 60px;
   padding-bottom: 60px;
+
+  @media(min-width:576px){
+    display: none;
+  }
 }
 
 .brands__list{
@@ -14,6 +32,20 @@
   margin: 0;
   padding: 0;
   display: none;
+
+  @media(min-width:576px){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+  }
+
+  @media(min-width:768px){
+    display: flex;
+    justify-content: center;
+
+  }
+
 }
 
 .brands__item{
@@ -23,14 +55,94 @@
   min-height: 80px;
   min-width: 150px;
   display: flex;
-  box-sizing: border-box;
   flex-grow: 1;
+
+  @media(min-width: 576px){
+    min-height: 127px;
+    flex-grow: none;
+  }
+
+  @media(min-width: 768px){
+    min-height: 80px;
+  }
+
+  @media(min-width: 1440px){
+    min-height: 135px;
+    max-width: 255px;
+  }
 
 
 }
 
 .brands__image{
-
   margin: auto;
+}
 
+.brands__image--hahnemuhle{
+  @media(min-width: 576px){
+    width: 186px;
+    height: 53px;
+  }
+
+  @media(min-width: 768px){
+    width: 116px;
+    height: 33px;
+  }
+
+  @media(min-width: 1440px){
+    width: 197px;
+    height: 55px;
+  }
+}
+
+.brands__image--canson{
+  @media(min-width: 576px){
+    width: 176px;
+    height: 51px;
+  }
+
+  @media(min-width: 768px){
+    width: 110px;
+    height: 32px;
+  }
+
+  @media(min-width: 1440px){
+    width: 186px;
+    height: 53px;
+  }
+
+}
+
+.brands__image--royal-talens{
+  @media(min-width: 576px){
+    width: 212px;
+    height: 21px;
+  }
+
+  @media(min-width: 768px){
+    width: 134px;
+    height: 14px;
+  }
+
+  @media(min-width: 1440px){
+    width: 225px;
+    height: 21px;
+  }
+}
+
+.brands__image--fabriano{
+  @media(min-width: 576px){
+    width: 198px;
+    height: 26px;
+  }
+
+  @media(min-width: 768px){
+    width: 124px;
+    height: 16px;
+  }
+
+  @media(min-width: 1440px){
+    width: 209px;
+    height: 26px;
+  }
 }

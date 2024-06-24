@@ -18,20 +18,26 @@
       <a class="page-header__logo" href="#">
         <img class="page-header__logo-icon" src="images/header-logo.svg" alt="Логотип компании simple.">
       </a>
-      <div class="page-header_controls">
+      <div class="page-header__controls page-header__controls--main">
         <button class="page-header__toggle">
           <span class="visually-hidden">Открыть меню</span>
         </button>
-        <a class="page-header__search-button" href="#">
+        <a class="page-header__search-button page-header__search-button--main" href="#">
           <span class="visually-hidden">Поиск</span>
-          <svg class="page-header__search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16ZM3 21l4.35-4.35" stroke="#4C5866" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg class="page-header__search-icon" aria-hidden="true" focusable="false" width="24" height="24">
+            <use href="images/sprite.svg#icon-search"></use>
           </svg>
         </a>
+        <form action="https://echo.htmlacademy.ru/" method="get">
+          <div class="page-header__search-wrapper search">
+            <input class="search__input" type="text" name="user-search" placeholder="Найти">
+            <button class="search__close-button" type="button"></button>
+          </div>
+        </form>
         <a class="page-header__login-button" href="#">
           <span class="visually-hidden">Вход в учетную запись</span>
-          <svg class="page-header__login-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3" stroke="#4C5866" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg class="page-header__login-icon" aria-hidden="true" focusable="false" width="24" height="24">
+            <use href="images/sprite.svg#icon-login"></use>
           </svg>
         </a>
       </div>
@@ -50,9 +56,35 @@
         <li class="page-navigation__item">
           <a class="page-navigation__link" href="">Контакты</a>
         </li>
+        <li class="page-navigation__item page-navigation__controls">
+          <div class="page-header__controls page-header__controls--nav">
+            <button class="page-header__toggle">
+              <span class="visually-hidden">Открыть меню</span>
+            </button>
+            <a class="page-header__search-button" href="#">
+              <span class="visually-hidden">Поиск</span>
+              <svg class="page-header__search-icon" aria-hidden="true" focusable="false" width="24" height="24">
+                <use href="images/sprite.svg#icon-search"></use>
+              </svg>
+            </a>
+            <form action="https://echo.htmlacademy.ru/" method="get">
+              <div class="page-header__search-wrapper search">
+                <input class="search__input" type="text" name="user-search" placeholder="Найти">
+                <button class="search__close-button" type="button"></button>
+              </div>
+            </form>
 
+            <a class="page-header__login-button" href="#">
+              <span class="visually-hidden">Вход в учетную запись</span>
+              <svg class="page-header__login-icon" aria-hidden="true" focusable="false" width="24" height="24">
+                <use href="images/sprite.svg#icon-login"></use>
+              </svg>
+            </a>
+          </div>
+        </li>
       </ul>
     </nav>
+
   </header>
   <main class="main-index">
     <section class="hero">
@@ -62,7 +94,17 @@
           <p class="hero__description">Бума́га (предположительно от итал. bombagia, первоисточником же считается иранский) — волокнистый материал с минеральными добавками.</p>
           <a class="hero__button button" href="#">Каталог</a>
         </div>
-        <img class="hero__image" width="195" height="396" src="images/paper-small.png" alt="Красивый сверток из хорошей бумаги.">
+
+        <picture>
+          <source type="image/webp" media="(min-width: 1440px)" srcset="images/paper-roll-desktop.webp 1x, images/paper-roll-desktop@2x.webp 2x">
+          <source type="image/webp" media="(min-width: 768px)" srcset="images/paper-roll-tablet.webp 1x, images/paper-roll-tablet@2x.webp 2x">
+          <source type="image/webp"  srcset="images/paper-roll-mobile.webp 1x, images/paper-roll-mobile@2x.webp 2x">
+
+          <source media="(min-width: 1440px)" srcset="images/paper-roll-desktop.png 1x, images/paper-roll-desktop@2x.png 2x">
+          <source media="(min-width: 768px)" srcset="images/paper-roll-tablet.png 1x, images/paper-roll-tablet@2x.png 2x">
+          <img class="hero__image" src="images/paper-roll-mobile.png" srcset="images/paper-roll-mobile@2x.png 2x" width="195" height="396"  alt="Красивый сверток из хорошей бумаги.">
+        </picture>
+
       </div>
     </section>
     <section class="about">
@@ -70,33 +112,82 @@
         <h2 class="visually-hidden">О производстве</h2>
         <ul class="about__list  paper">
           <li class="paper__item">
-            <img class="paper__image" src="images/paper-small-1.png" alt="три листа бумаги на сером фоне.">
+
+            <picture>
+              <source type="image/webp" media="(min-width: 768px)" srcset="images/paper-item-1-tablet.webp 1x, images/paper-item-1-tablet@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 576px)" srcset="images/paper-item-1-mobile-big.webp 1x, images/paper-item-1-mobile-big@2x.webp 2x">
+              <source type="image/webp"  srcset="images/paper-item-1-mobile-small.webp 1x, images/paper-item-1-mobile-small@2x.webp 2x">
+
+              <source media="(min-width:768px)" srcset="images/paper-item-1-tablet.png 1x, images/paper-item-1-tablet@2x.png 2x">
+              <source media="(min-width:576px)" srcset="images/paper-item-1-mobile-big.png 1x, images/paper-item-1-mobile-big@2x.png 2x">
+              <img class="paper__image" src="images/paper-item-1-mobile-small.png" srcset="images/paper-item-1-mobile-small@2x.png 2x" width="130" height="96" alt="Три листа бумаги на сером фоне.">
+            </picture>
+
             <div class="paper__info">
               <h3 class="paper__title">V.1</h3>
-              <p class="paper__description">Результат <br> вашего обучения</p>
+              <p class="paper__description">Результат вашего обучения</p>
             </div>
           </li>
 
           <li class="paper__item">
-            <img class="paper__image" src="images/paper-small-2.png" alt="Два листа бумаги на сером фоне.">
+
+            <picture>
+              <source type="image/webp" media="(min-width: 768px)" srcset="images/paper-item-2-tablet.webp 1x, images/paper-item-2-tablet@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 576px)" srcset="images/paper-item-2-mobile-big.webp 1x, images/paper-item-2-mobile-big@2x.webp 2x">
+              <source type="image/webp"  srcset="images/paper-item-2-mobile-small.webp 1x, images/paper-item-2-mobile-small@2x.webp 2x">
+
+
+              <source media="(min-width:768px)" srcset="images/paper-item-2-tablet.png 1x, images/paper-item-2-tablet@2x.png 2x">
+              <source media="(min-width:576px)" srcset="images/paper-item-2-mobile-big.png 1x, images/paper-item-2-mobile-big@2x.png 2x">
+              <img class="paper__image" src="images/paper-item-2-mobile-small.png" srcset="images/paper-item-2-mobile-small@2x.png 2x" width="130" height="96" alt="Два листа бумаги на сером фоне.">
+            </picture>
+
             <div class="paper__info">
               <h3 class="paper__title">V.1</h3>
-              <p class="paper__description">Результат <br> вашего обучения</p>
+              <p class="paper__description">Результат вашего обучения</p>
             </div>
           </li>
 
           <li class="paper__item">
-            <img class="paper__image" src="images/paper-small-3.png" alt="Два листа бумаги на сером фоне.">
+
+            <picture>
+
+              <source type="image/webp" media="(min-width: 768px)" srcset="images/paper-item-3-tablet.webp 1x, images/paper-item-3-tablet@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 576px)" srcset="images/paper-item-3-mobile-big.webp 1x, images/paper-item-3-mobile-big@2x.webp 2x">
+              <source type="image/webp"  srcset="images/paper-item-3-mobile-small.webp 1x, images/paper-item-3-mobile-small@2x.webp 2x">
+
+              <source media="(min-width:768px)" srcset="images/paper-item-3-tablet.png 1x, images/paper-item-3-tablet@2x.png 2x">
+              <source media="(min-width:576px)" srcset="images/paper-item-3-mobile-big.png 1x, images/paper-item-3-mobile-big@2x.png 2x">
+              <img class="paper__image" src="images/paper-item-3-mobile-small.png" srcset="images/paper-item-3-mobile-small@2x.png 2x" width="130" height="96" alt="Два листа бумаги на сером фоне.">
+            </picture>
+
             <div class="paper__info">
               <h3 class="paper__title">V.1</h3>
-              <p class="paper__description">Результат <br> вашего обучения</p>
+              <p class="paper__description">Результат вашего обучения</p>
             </div>
           </li>
         </ul>
-        <img class="about__full-image" src="images/paper-main-image.png" width="290" height="223" alt="Развернутый лист бумаги, олицетворяющий безмятежность.">
-        <span class="about__subtitle">Максимальная белизна</span>
-        <p class="about__description">Для повышения белизны, гладкости и мягкости в состав бумажной массы вводят белые минеральные вещества: мел, тальк, каолин и др. Эта операция называется наполнением.
-          <br><br>Отлив бумажного листа осуществляют на бумагоделательной машине, важнейшей частью которой является непрерывно движущаяся (как транспортер) металлическая или капроновая сетка.</p>
+
+
+        <div class="about__additional-container">
+          <picture>
+            <source type="image/webp" media="(min-width: 1440px)" srcset="images/main-paper-desktop.webp 1x, images/main-paper-desktop@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 576px)" srcset="images/main-paper-mobile-big.webp 1x, images/main-paper-mobile-big@2x.webp 2x">
+            <source type="image/webp"  srcset="images/main-paper-mobile-small.webp 1x, images/main-paper-mobile-small@2x.webp 2x">
+
+            <source media="(min-width:1440px)" srcset="images/main-paper-desktop.png 1x, images/main-paper-desktop@2x.png 2x">
+            <source media="(min-width:576px)" srcset="images/main-paper-mobile-big.png 1x, images/main-paper-mobile-big@2x.png 2x">
+            <img class="about__full-image" src="images/main-paper-mobile-small.png" srcset="images/main-paper-mobile-small@2x.png 2x" width="290" height="223" alt="Развернутый лист бумаги, олицетворяющий безмятежность.">
+          </picture>
+
+          <div class="about__info">
+            <span class="about__subtitle">Максимальная белизна</span>
+            <p class="about__description">Для повышения белизны, гладкости и мягкости в состав бумажной массы вводят белые минеральные вещества: мел, тальк, каолин и др. Эта операция называется наполнением.</p>
+            <p class="about__description">Отлив бумажного листа осуществляют на бумагоделательной машине, важнейшей частью которой является непрерывно движущаяся (как транспортер) металлическая или капроновая сетка.</p>
+
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -105,21 +196,58 @@
         <h2 class="visually-hidden">Товары компании</h2>
         <ul class="products__list">
           <li class="products__item">
-            <img class="products__image" src = "images/packaging.png" width="290" height="180" alt="Различные виды упаковки из крафт-бумаги и картона.">
+            <picture>
+
+              <source type="image/webp" media="(min-width: 1440px)" srcset="images/products/paper-product-1-desktop.webp 1x, images/products/paper-product-1-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width:768px)" srcset="images/products/paper-product-1-tablet.webp 1x, images/products/paper-product-1-tablet@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 576px)" srcset="images/products/paper-product-1-mobile-big.webp 1x, images/products/paper-product-1-mobile-big@2x.webp 2x">
+              <source type="image/webp"  srcset="images/products/paper-product-1-mobile-small.webp 1x, images/products/paper-product-1-mobile-small@2x.webp 2x">
+
+              <source media="(min-width:1440px)" srcset="images/products/paper-product-1-desktop.png 1x, images/products/paper-product-1-desktop@2x.png 2x">
+              <source media="(min-width:768px)" srcset="images/products/paper-product-1-tablet.png 1x, images/products/paper-product-1-tablet@2x.png 2x">
+              <source media="(min-width:576px)" srcset="images/products/paper-product-1-mobile-big.png 1x, images/products/paper-product-1-mobile-big@2x.png 2x">
+              <img class="products__image" src="images/products/paper-product-1-mobile-small.png" srcset="images/products/paper-product-1-mobile-small@2x.png 2x" width="290" height="180" alt="Различные виды упаковки из крафт-бумаги и картона.">
+            </picture>
+
             <h3 class="products__title">Упаковка</h3>
             <span class="products__count">Тираж: от 50 штук</span>
             <p class="products__description">Сделано из крафт-бумаги или плотного картона. Упаковки имеют различные формы и расцветки, изготовим форму под заказ.</p>
             <a class="products__about-button" href="#">Подробнее</a>
           </li>
           <li class="products__item">
-            <img class="products__image" src = "images/packet.png" width="290" height="180" alt="Красивый пакет из крафт-бумаги и картона.">
+            <picture>
+
+              <source type="image/webp" media="(min-width: 1440px)" srcset="images/products/paper-product-2-desktop.webp 1x, images/products/paper-product-2-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width:768px)" srcset="images/products/paper-product-2-tablet.webp 1x, images/products/paper-product-2-tablet@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 576px)" srcset="images/products/paper-product-2-mobile-big.webp 1x, images/products/paper-product-2-mobile-big@2x.webp 2x">
+              <source type="image/webp"  srcset="images/products/paper-product-2-mobile-small.webp 1x, images/products/paper-product-2-mobile-small@2x.webp 2x">
+
+              <source media="(min-width:1440px)" srcset="images/products/paper-product-2-desktop.png 1x, images/products/paper-product-2-desktop@2x.png 2x">
+              <source media="(min-width:768px)" srcset="images/products/paper-product-2-tablet.png 1x, images/products/paper-product-2-tablet@2x.png 2x">
+              <source media="(min-width:576px)" srcset="images/products/paper-product-2-mobile-big.png 1x, images/products/paper-product-2-mobile-big@2x.png 2x">
+              <img class="products__image" src="images/products/paper-product-2-mobile-small.png" srcset="images/products/paper-product-2-mobile-small@2x.png 2x" width="290" height="180" alt="Красивый пакет из крафт-бумаги и картона.">
+            </picture>
+
             <h3 class="products__title">Пакеты</h3>
             <span class="products__count">Тираж: от 200 штук</span>
             <p class="products__description">С прямоугольным дном. От 10 см до 60 см по высоте. Материалы: картон, крафт-бумага. Различные расцветки и дизайн.</p>
             <a class="products__about-button" href="#">Подробнее</a>
           </li>
           <li class="products__item">
-            <img class="products__image" src = "images/case.png" width="290" height="180" alt="Отличный кейс в серой окантовке из прессованной бумаги">
+
+            <picture>
+
+              <source type="image/webp" media="(min-width: 1440px)" srcset="images/products/paper-product-3-desktop.webp 1x, images/products/paper-product-3-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width:768px)" srcset="images/products/paper-product-3-tablet.webp 1x, images/products/paper-product-3-tablet@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 576px)" srcset="images/products/paper-product-3-mobile-big.webp 1x, images/products/paper-product-3-mobile-big@2x.webp 2x">
+              <source type="image/webp"  srcset="images/products/paper-product-3-mobile-small.webp 1x, images/products/paper-product-3-mobile-small@2x.webp 2x">
+
+              <source media="(min-width:1440px)" srcset="images/products/paper-product-3-desktop.png 1x, images/products/paper-product-3-desktop@2x.png 2x">
+              <source media="(min-width:768px)" srcset="images/products/paper-product-3-tablet.png 1x, images/products/paper-product-3-tablet@2x.png 2x">
+              <source media="(min-width:576px)" srcset="images/products/paper-product-3-mobile-big.png 1x, images/products/paper-product-3-mobile-big@2x.png 2x">
+              <img class="products__image" src="images/products/paper-product-3-mobile-small.png" srcset="images/products/paper-product-3-mobile-small@2x.png 2x" width="290" height="180" alt="Отличный кейс в серой окантовке из прессованной бумаги.">
+            </picture>
+
             <h3 class="products__title">Кейсы</h3>
             <span class="products__count">Тираж: от 30 штук</span>
             <p class="products__description">Подойдет для документов и других бумаг. Различные расцветки, размеры и плотность. Материал: прессованная бумага.</p>
@@ -127,7 +255,20 @@
           </li>
 
           <li class="products__item">
-            <img class="products__image" src = "images/other-products.png" width="290" height="180" alt="Различные изделия из бумаги всех сортов.">
+            <picture>
+
+              <source type="image/webp" media="(min-width: 1440px)" srcset="images/products/paper-product-4-desktop.webp 1x, images/products/paper-product-4-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width:768px)" srcset="images/products/paper-product-4-tablet.webp 1x, images/products/paper-product-4-tablet@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 576px)" srcset="images/products/paper-product-4-mobile-big.webp 1x, images/products/paper-product-4-mobile-big@2x.webp 2x">
+              <source type="image/webp"  srcset="images/products/paper-product-4-mobile-small.webp 1x, images/products/paper-product-4-mobile-small@2x.webp 2x">
+
+
+              <source media="(min-width:1440px)" srcset="images/products/paper-product-4-desktop.png 1x, images/products/paper-product-4-desktop@2x.png 2x">
+              <source media="(min-width:768px)" srcset="images/products/paper-product-4-tablet.png 1x, images/products/paper-product-4-tablet@2x.png 2x">
+              <source media="(min-width:576px)" srcset="images/products/paper-product-4-mobile-big.png 1x, images/products/paper-product-4-mobile-big@2x.png 2x">
+              <img class="products__image" src="images/products/paper-product-4-mobile-small.png" srcset="images/products/paper-product-4-mobile-small@2x.png 2x" width="290" height="180" alt="Различные изделия из бумаги всех сортов.">
+            </picture>
+
             <h3 class="products__title">Другие изделия</h3>
             <span class="products__count">Тираж: от 100 штук</span>
             <p class="products__description">Нестандартные упаковки, кейсы и другие изделия различных размеров и конфигураций. Изготовим в кратчайшие сроки.</p>
@@ -135,60 +276,54 @@
           </li>
 
         </ul>
+
       </div>
     </section>
 
     <section class="brands">
+      <h2 class="visually-hidden">Компании партнеры</h2>
 
-    <div class="brands__wrapper"></div>
-      <div class="brands__slider swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide brands__item">
-            <img class="brands__image" src="images/hahnemuehle-icon.svg" alt="Логотип компании Hahnemühle.">
+      <div class="brands__wrapper">
+        <div class="brands__slider swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide brands__item">
+              <img class="brands__image" src="images/hahnemuehle-icon.svg" alt="Логотип компании Hahnemühle.">
+
+            </div>
+
+            <div class="swiper-slide brands__item">
+              <img class="brands__image" src="images/canson-icon.svg" alt="Логотип компании Canson.">
+            </div>
+
+
+            <div class="swiper-slide brands__item">
+              <img class="brands__image" src="images/royal-talens-icon.svg" alt="Логотип компании Royal Talens.">
+
+            </div>
+
+            <div class="swiper-slide brands__item">
+              <img class="brands__image" src="images/fabriano-icon.svg" alt="Логотип компании Fabriano.">
+            </div>
+
+            <div class="swiper-slide brands__item">
+              <img class="brands__image" src="images/international-paper.svg" alt="Логотип компании International Paper.">
+            </div>
 
           </div>
-
-          <div class="swiper-slide brands__item">
-            <img class="brands__image" src="images/canson-icon.svg" alt="Логотип компании Canson.">
-          </div>
-
-
-          <div class="swiper-slide brands__item">
-            <img class="brands__image" src="images/royal-talens-icon.svg" alt="Логотип компании Royal Talens.">
-
-          </div>
-
-          <div class="swiper-slide brands__item">
-            <img class="brands__image" src="images/fabriano-icon.svg" alt="Логотип компании Fabriano.">
-          </div>
-
-          <div class="swiper-slide brands__item">
-            <img class="brands__image" src="images/international-paper.svg" alt="Логотип компании International Paper.">
-          </div>
-
         </div>
-      </div>
 
-
-
-
-      <div class="brands__wrapperr">
-        <h2 class="visually-hidden">Компании партнеры</h2>
         <ul class="brands__list">
           <li class="brands__item">
-            <img class="brands__image" src="images/hahnemuehle-icon.svg" alt="Логотип компании Hahnemühle.">
+            <img class="brands__image brands__image--hahnemuhle" src="images/hahnemuehle-icon.svg" alt="Логотип компании Hahnemühle.">
           </li>
           <li class="brands__item">
-            <img class="brands__image" src="images/canson-icon.svg" alt="Логотип компании Canson.">
+            <img class="brands__image brands__image--canson" src="images/canson-icon.svg" alt="Логотип компании Canson.">
           </li>
           <li class="brands__item">
-            <img class="brands__image" src="images/royal-talens-icon.svg" alt="Логотип компании Royal Talens.">
+            <img class="brands__image brands__image--royal-talens" src="images/royal-talens-icon.svg" alt="Логотип компании Royal Talens.">
           </li>
           <li class="brands__item">
-            <img class="brands__image" src="images/fabriano-icon.svg" alt="Логотип компании Fabriano.">
-          </li>
-          <li class="brands__item">
-            <img class="brands__image" src="images/international-paper.svg" alt="Логотип компании International Paper.">
+            <img class="brands__image brands__image--fabriano" src="images/fabriano-icon.svg" alt="Логотип компании Fabriano.">
           </li>
         </ul>
       </div>
@@ -196,10 +331,24 @@
 
     <section class="sketchbook">
       <div class="sketchbook__wrapper">
-        <img class="sketchbook__image" width="290" height="220" src="images/sketchbook.png" alt="Красивый скетчбук от нашей компании.">
-        <h2 class="sketchbook__title">Simple скетчбук</h2>
-        <p class="sketchbook__description">80 листов, твердая обложка, бумага  Fabriano 200 г/м2. Подойдет и для графики и для акварели. Для самых смелых творческих замыслов!</p>
-        <a class="sketchbook__button button" href="#">Купить</a>
+        <picture>
+
+          <source type="image/webp" media="(min-width: 1440px)" srcset="images/sketchbook/sketchbook-desktop.webp 1x, images/sketchbook/sketchbook-desktop@2x.webp 2x">
+          <source type="image/webp" media="(min-width:768px)" srcset="images/sketchbook/sketchbook-tablet.webp 1x, images/sketchbook/sketchbook-tablet@2x.webp 2x">
+          <source type="image/webp" media="(min-width: 576px)" srcset="images/sketchbook/sketchbook-mobile-big.webp 1x, images/sketchbook/sketchbook-mobile-big@2x.webp 2x">
+          <source type="image/webp"  srcset="images/sketchbook/sketchbook-mobile-small.webp 1x, images/sketchbook/sketchbook-mobile-small@2x.webp 2x">
+
+          <source media="(min-width:1440px)" srcset="images/sketchbook/sketchbook-desktop.png 1x, images/sketchbook/sketchbook-desktop@2x.png 2x">
+          <source media="(min-width:768px)" srcset="images/sketchbook/sketchbook-tablet.png 1x, images/sketchbook/sketchbook-tablet@2x.png 2x">
+          <source media="(min-width:576px)" srcset="images/sketchbook/sketchbook-mobile-big.png 1x, images/sketchbook/sketchbook-mobile-big@2x.png 2x">
+          <img class="sketchbook__image" src="images/sketchbook/sketchbook-mobile-small.png" srcset="images/sketchbook/sketchbook-mobile-small@2x.png 2x" width="290" height="220" alt="Красивый скетчбук от нашей компании.">
+        </picture>
+
+        <div class="sketchbook__info">
+          <h2 class="sketchbook__title">Simple скетчбук</h2>
+          <p class="sketchbook__description">80 листов, твердая обложка, бумага  Fabriano 200 г/м<sup>2</sup>. Подойдет и для графики и для акварели. Для самых смелых творческих замыслов!</p>
+          <a class="sketchbook__button button" href="#">Купить</a>
+        </div>
       </div>
     </section>
   </main>
@@ -212,38 +361,40 @@
         <li class="socials__item">
           <a class="socials__link" href="#">
             <span class="visually-hidden">Официальное сообщество в FaceBook.</span>
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12.4 18v-6.97h2.33l.35-2.7H12.4V6.6c0-.79.22-1.32 1.34-1.32h1.44V2.86c-.7-.08-1.4-.11-2.1-.11-2.06 0-3.47 1.26-3.47 3.58v2H7.27v2.7H9.6V18H1a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-4.6Z" fill="#fff"/>
+            <svg class="socials__icon" aria-hidden="true" focusable="false" width="18" height="18">
+              <use href="images/sprite.svg#icon-facebook"></use>
             </svg>
           </a>
         </li>
         <li class="socials__item">
           <a class="socials__link" href="#">
             <span class="visually-hidden">Официальное сообщество в Twitter.</span>
-            <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M21.16 2.66c-.76.33-1.57.56-2.4.65A4.2 4.2 0 0 0 20.6 1c-.82.49-1.72.83-2.66 1.01a4.18 4.18 0 0 0-7.12 3.82A11.87 11.87 0 0 1 2.2 1.46a4.17 4.17 0 0 0 1.3 5.58 4.17 4.17 0 0 1-1.9-.52v.05a4.19 4.19 0 0 0 3.35 4.1 4.2 4.2 0 0 1-1.89.07 4.18 4.18 0 0 0 3.91 2.91 8.4 8.4 0 0 1-6.2 1.73 11.83 11.83 0 0 0 6.42 1.88c7.7 0 11.9-6.37 11.9-11.9l-.01-.54a8.5 8.5 0 0 0 2.08-2.16Z" fill="#fff"/>
+            <svg class="socials__icon" aria-hidden="true" focusable="false" width="22" height="18">
+              <use href="images/sprite.svg#icon-twitter"></use>
             </svg>
           </a>
         </li>
         <li class="socials__item">
           <a class="socials__link" href="#">
             <span class="visually-hidden">Официальное сообщество в Instagram.</span>
-            <svg class="socials__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 0c2.72 0 3.06.01 4.12.06 1.07.05 1.8.22 2.43.47.66.25 1.22.6 1.77 1.15.51.5.9 1.1 1.16 1.77.24.64.41 1.36.46 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12a7.4 7.4 0 0 1-.46 2.43 4.88 4.88 0 0 1-1.16 1.77c-.5.51-1.1.9-1.77 1.16-.64.24-1.36.41-2.43.46-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06a7.4 7.4 0 0 1-2.43-.46 4.89 4.89 0 0 1-1.77-1.16c-.51-.5-.9-1.1-1.16-1.77a7.36 7.36 0 0 1-.46-2.43C.01 13.06 0 12.72 0 10s.01-3.06.06-4.12c.05-1.07.22-1.8.47-2.43.25-.67.64-1.27 1.15-1.77.5-.51 1.1-.9 1.77-1.16A7.36 7.36 0 0 1 5.88.06C6.94.01 7.28 0 10 0Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm6.5-.25a1.25 1.25 0 1 0-2.5 0 1.25 1.25 0 0 0 2.5 0ZM10 7a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z" fill="#fff"/>
+
+            <svg class="socials__icon" aria-hidden="true" focusable="false" width="20" height="20">
+              <use href="images/sprite.svg#icon-instagram"></use>
             </svg>
           </a>
         </li>
         <li class="socials__item">
           <a class="socials__link" href="#">
             <span class="visually-hidden">Официальный канал на YouTube.</span>
-            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M19.54 2.5C20 4.28 20 8 20 8s0 3.72-.46 5.5c-.25.99-1 1.76-1.93 2.02C15.9 16 10 16 10 16s-5.9 0-7.6-.48A2.81 2.81 0 0 1 .45 13.5C0 11.72 0 8 0 8s0-3.72.46-5.5C.7 1.5 1.46.74 2.4.48 4.1 0 10 0 10 0s5.9 0 7.6.48a2.81 2.81 0 0 1 1.94 2.02ZM8 11.5 14 8 8 4.5v7Z" fill="#fff"/>
+
+            <svg class="socials__icon" aria-hidden="true" focusable="false" width="20" height="16">
+              <use href="images/sprite.svg#icon-youtube"></use>
             </svg>
           </a>
         </li>
       </ul>
     </div>
-    <span class="page-footer__credits">Simple ® 2021</span>
+    <span class="page-footer__credits">Simple <span>®</span> 2021</span>
   </footer>
 
 

@@ -1,24 +1,82 @@
 .products__wrapper{
   padding: 60px 15px;
+
+  @media (min-width: 576px){
+    padding: 60px 33px;
+  }
+
+  @media (min-width: 768px){
+    padding: 60px 39px;
+  }
+
+  @media (min-width: 1440px){
+    padding: 90px 165px;
+
+  }
 }
 
 .products__list{
   list-style-type: none;
   padding: 0;
   margin: 0;
+
+  @media (min-width: 576px){
+   display: grid;
+
+   grid-template-columns: 1fr 1fr;
+   column-gap: 30px;
+   row-gap: 40px;
+  }
+
+  @media (min-width: 768px){
+    row-gap: 60px;
+  }
+
+  @media (min-width: 1440px){
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+
+  }
 }
 
 .products__item{
   margin-bottom: 60px;
+  display: flex;
+
+  flex-direction: column;
 
   &:last-child{
     margin-bottom: 0;
   }
+  @media (min-width: 576px){
+
+    margin-bottom: 0;
+  }
+  @media (min-width: 1440px){
+
+    max-width: 255px;
+  }
+
 }
 
 .products__image{
   display: block;
   margin-bottom: 20px;
+
+  @media(min-width: 576px){
+    width: 240px;
+  }
+
+  @media(min-width: 768px){
+    width: 330px;
+  }
+
+  @media(min-width: 1440px){
+    width: 255px;
+  }
+
+
 }
 
 .products__title{
@@ -27,6 +85,11 @@
   color: #666666;
   margin: 0;
   margin-bottom: 4px;
+
+  @media(min-width: 768px){
+    font-size: 30px;
+    margin-bottom: 8px;
+  }
 }
 
 .products__count{
@@ -42,6 +105,14 @@
   color: #85859b;
   margin: 0;
   margin-bottom: 30px;
+
+  @media (min-width:576px){
+    margin-bottom: 20px;
+  }
+
+  @media (min-width:768px){
+    font-size: 18px;
+  }
 }
 
 .products__about-button{
@@ -49,4 +120,49 @@
   text-decoration: none;
   font-size: 20px;
   color: #7875fe;
+  position: relative;
+
+  transition: all 0.5s ease;
+
+  align-self: start;
+  min-width: 132px;
+
+  &::after{
+    content: "";
+    position: absolute;
+    background-image: url("../images/info-arrow.svg");
+    background-repeat: no-repeat;
+    width: 21px;
+    height: 15px;
+    top: 5px;
+    left: 108px;
+    right: 0;
+    bottom: 0;
+  }
+
+
+  &:hover{
+    color: #4946b4;
+    &::after{
+
+      background-image: url("../images/info-arrow-hover.svg");
+    }
+  }
+
+  &:focus-visible{
+    background-color: #dad9fb;
+    transition: none;
+    border-radius: 2px;
+    outline: none;
+  }
+
+  &:active{
+    transition: none;
+    color: #4946b4;
+    &::after{
+
+      background-image: url("../images/info-arrow-active.svg");
+      width: 28px;
+    }
+  }
 }

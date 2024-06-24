@@ -3,19 +3,51 @@
 .page-footer__wrapper{
   padding: 20px 15px;
   background-color: #4C5866;
+
+  @media(min-width: 576px){
+    padding: 29px 33px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media(min-width: 768px){
+    padding: 29px 39px;
+
+  }
+
+  @media(min-width: 1440px){
+    padding: 29px 165px;
+
+  }
+
+
+}
+
+.page-footer__logo{
+  align-self: center;
 }
 
 .page-footer__icon{
   display: block;
   margin: 0 auto;
   margin-bottom: 20px;
+
+  @media(min-width: 576px){
+    margin: 0;
+  }
 }
 
 .page-footer__credits{
+  font-size: 13px;
+  color: #4c5866;
   text-transform: uppercase;
   display: block;
   margin: 0 auto;
   margin-top: 3px;
   margin-bottom: 3px;
   max-width: 115px;
+}
+
+.page-footer__credits span{
+  color: #bcbcbc;
 }

@@ -16,6 +16,17 @@
     background-color: #ffffff;
     padding: 18px 33px;
   }
+
+  @media(min-width:768px){
+    padding: 18px 39px;
+    order: 3;
+  }
+
+  @media(min-width:1440px){
+    padding: 28px 0;
+    order: 2;
+
+  }
 }
 
 .page-navigation__list{
@@ -25,6 +36,7 @@
   @media(min-width:576px){
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
   }
 }
@@ -32,17 +44,53 @@
 .page-navigation__item{
   margin-bottom: 50px;
 
+
   &:last-child {
     margin: 0;
   }
 
   @media(min-width:576px){
     margin: 0;
+    max-width: 1439px;
+  }
+
+  @media(min-width:1440px){
+    margin-right: 60px;
+
+  }
+
+  &--controls{
+    display: none;
+    @media(min-width:1440px){
+      display: block;
+    }
   }
 }
+
 
 .page-navigation__link{
   font-size: 18px;
   text-decoration: none;
   color: #4C5866;
+  transition: all 0.5s ease;
+
+  @media(min-width:576px){
+    font-size: 20px;
+  }
+
+  &:hover{
+    color: #7875fe;
+  }
+
+  &:focus-visible{
+    background-color:  #dad9fb;
+    border-radius: 2px;
+    outline: none;
+    transition: none;
+  }
+
+  &:active{
+    color: #4946b4;
+    transition: none;
+  }
 }
